@@ -4,14 +4,17 @@
 def identiteRemarquable(input):
     if(isSimpleIdentiteRemarquable(input)):
         dict = buildIdentiteRemarquable(input)
-
         listValue = list(dict.keys())
-        finalResult = "("+listValue[1]+")^2" + listValue[2]+"2*("+listValue[1]+"*"+listValue[3]+")+("+listValue[3]+")^2"
+
+        finalResult = listValue[6]+"("+listValue[1]+")^2" + listValue[2]+"2*("+listValue[1]+"*"+listValue[3]+")+("+listValue[3]+")^2"+listValue[5]
         return finalResult
     elif(isDoubleIdentiteRemarquable(input)[0]):
         a = isDoubleIdentiteRemarquable(input)[1]
         b = isDoubleIdentiteRemarquable(input)[2]
-        finalResult = a +"(^2)-"+ b + "(^2)"
+        c = isDoubleIdentiteRemarquable(input)[3]
+        d = isDoubleIdentiteRemarquable(input)[4]
+        print(c)
+        finalResult = d + a +"(^2)-"+ b + "(^2)" +c
         return finalResult
     else:
         return 0
@@ -45,9 +48,16 @@ def isDoubleIdentiteRemarquable(input):
         for i in range(endFirstPlacement - firstOperatorPlacement - 1):
             actual = i + 1 + firstOperatorPlacement
             b = b + input[actual]
+        c = ""
+        for i in range(len(input) - endFirstPlacement - 3):
+            actual = i + 3 + endFirstPlacement
+            c = c + input[actual]
+        d = ""
+        for i in range(startFirstPlacement):
+            d = d + input[i]
 
 
-        list = [True, a, b]
+        list = [True, a, b, c, d]
         if(input[firstOperatorPlacement] == "+"):
             wantedMath = "("+a+"-"+b+")"
             if(value.__contains__(wantedMath)):
@@ -84,6 +94,14 @@ def buildIdentiteRemarquable(input):
     for i in range(endPlacement-operatorPlacement-1):
         actual = i+1+operatorPlacement
         b = b+input[actual]
+    c = ""
+    for i in range(len(input)-endPlacement-3):
+        actual = i+3+endPlacement
+        c = c + input[actual]
+    d = ""
+    for i in range(startPlacement):
+        d = d + input[i]
+
 
 
     dict["("] = startPlacement
@@ -91,6 +109,9 @@ def buildIdentiteRemarquable(input):
     dict[operator] = operatorPlacement
     dict[b] = "b"
     dict[")"] = endPlacement
+    dict[c] = "c" #La suite
+    dict[d] = "d" #Avant
+
 
     return dict
 

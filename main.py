@@ -1,10 +1,10 @@
 #Just run bruteSolver after modify "formule" and "resultNeeded".
 
+method = 1
 
+formule = "(4a+b)(4a-b)+3"
 
-formule = "(a+b)^2"
-
-resultNeeded = "(a)^2+2*(a*b)+(b)^2"
+resultNeeded = ""
 
 
 brute = 10 #The number of time the program can use the same math form.

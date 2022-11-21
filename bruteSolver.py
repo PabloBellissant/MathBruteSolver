@@ -27,4 +27,11 @@ def tryCalcul():
 
 
 
-print(tryCalcul())
+
+
+
+def forceCalcul(method):
+    if(method == 1):
+        return identiteRemarquable(formule)
+
+print(forceCalcul(1))
