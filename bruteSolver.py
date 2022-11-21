@@ -1,6 +1,5 @@
 import main
-from identiteRemarquable import identiteRemarquable
-import math
+from puissanceDecoder import puissanceDecoder
 
 
 
@@ -9,13 +8,13 @@ resultNeeded = main.resultNeeded
 
 arbre = {0:formule}
 
-#1 = Identité remarquable
+#1 = Écrire les puissances
 
 
 
 def tryCalcul():
     if(list(arbre.keys())[len(arbre)-1] != 1):
-        newCalcul = identiteRemarquable(formule)
+        newCalcul = puissanceDecoder(formule)
         if(newCalcul != 0):
             arbre[1] = newCalcul
             if(newCalcul == main.resultNeeded):
@@ -32,6 +31,6 @@ def tryCalcul():
 
 def forceCalcul(method):
     if(method == 1):
-        return identiteRemarquable(formule)
+        return identiteRemarquable(main.formule)
 
 print(forceCalcul(1))

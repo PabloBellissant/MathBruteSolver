@@ -2,7 +2,7 @@
 
 method = 1
 
-formule = "(4a+b)(4a-b)+3"
+formule = "4-(4a+b)(4a-b)"
 
 resultNeeded = ""
 
