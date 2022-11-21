@@ -14,8 +14,7 @@ def identiteRemarquable(input):
         finalResult = a +"(^2)-"+ b + "(^2)"
         return finalResult
     else:
-        print("non")
-        return False
+        return 0
 
 
 def isSimpleIdentiteRemarquable(input):
