@@ -31,6 +31,6 @@ def tryCalcul():
 
 def forceCalcul(method):
     if(method == 1):
-        return identiteRemarquable(main.formule)
+        return puissanceDecoder(main.formule)
 
 print(forceCalcul(1))

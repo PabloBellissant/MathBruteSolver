@@ -50,8 +50,16 @@ def puissanceDecoder(formule):
                         value = value + formule[val]
                     break
 
+
         else:
             value = formule[startValue]
+            endValue = startValue
+
+
+        newFormule = ""
+        for i in range(endValue):
+            newFormule = newFormule + formule[i]
+        print(2**2)
 
     #Faire code pour les puissance. On a déjà : Toutes les valeurs de départ et d’arrivé pour quoi est puissancé et la puissance, il nous manque uniquement le calcul. puis la mise en place de la réponse
 
@@ -62,7 +70,7 @@ def puissanceDecoder(formule):
     else:
         return False
 
-puissanceDecoder("(2x)^4")
+puissanceDecoder("4p-2x+(2x)^4")
 
 
 
